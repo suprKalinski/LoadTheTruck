@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c22c1x4qvwab2"]
+
+[ext_resource type="Script" path="res://Block.cs" id="1_ucjyj"]
+
+[node name="Node2D" type="RigidBody2D"]
+script = ExtResource("1_ucjyj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

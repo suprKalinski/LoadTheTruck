@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://qdn3x3qi6k0i"]
+
+[ext_resource type="Script" path="res://Gamelost.cs" id="1_y60a1"]
+[ext_resource type="Texture2D" uid="uid://bsguundn6musg" path="res://Art/START.png" id="2_3saji"]
+[ext_resource type="Texture2D" uid="uid://c5qo7pri8ewjy" path="res://Art/QUIT.png" id="3_310t6"]
+
+[node name="GameLostScreen" type="CanvasLayer"]
+script = ExtResource("1_y60a1")
+
+[node name="MessageLabel" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 112.0
+offset_right = 840.0
+offset_bottom = 135.0
+text = "Game Lost!"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="TouchScreenButton" parent="."]
+position = Vector2(11, 209)
+scale = Vector2(1, 0.503906)
+texture_normal = ExtResource("2_3saji")
+texture_pressed = ExtResource("2_3saji")
+
+[node name="QuitButton" type="TouchScreenButton" parent="."]
+position = Vector2(617, 203)
+scale = Vector2(1.09195, 0.818966)
+texture_normal = ExtResource("3_310t6")
+texture_pressed = ExtResource("3_310t6")

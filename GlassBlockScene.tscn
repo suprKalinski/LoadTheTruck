@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://di0uhmqcug21j"]
+
+[ext_resource type="Script" path="res://GlassBlockScene.cs" id="1_yo02l"]
+[ext_resource type="Texture2D" uid="uid://c7138okxpgpb" path="res://Art/peili.png" id="4_5lg68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigr"]
+size = Vector2(31, 73)
+
+[node name="Block" type="RigidBody2D"]
+position = Vector2(43, 41)
+script = ExtResource("1_yo02l")
+BlockType = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.83565, -3.60656)
+scale = Vector2(1.5604, 1.21311)
+texture = ExtResource("4_5lg68")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -3.5)
+shape = SubResource("RectangleShape2D_trigr")

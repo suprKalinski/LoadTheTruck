@@ -1,0 +1,320 @@
+[gd_scene load_steps=46 format=3 uid="uid://b4vpataf3lqba"]
+
+[ext_resource type="Script" path="res://CollectionManager.cs" id="1_njhfg"]
+[ext_resource type="Texture2D" uid="uid://b8duvee2s2bml" path="res://Art/backgroundmain.png" id="1_x472y"]
+[ext_resource type="Texture2D" uid="uid://bf7tlmj1iqn5h" path="res://Art/rekka.png" id="2_h8urr"]
+[ext_resource type="Script" path="res://Koodia/clawdrop.cs" id="4_hlo42"]
+[ext_resource type="Script" path="res://Camera2d.cs" id="6_xlu3s"]
+[ext_resource type="Texture2D" uid="uid://dyxw07x6e1vyf" path="res://Art/crane50%closed.png" id="7_3mtc0"]
+[ext_resource type="Texture2D" uid="uid://dvup4ly0s5cxa" path="res://Art/craneopen.png" id="7_crcvw"]
+[ext_resource type="PackedScene" uid="uid://vjx2bcsrqx11" path="res://WoodBlockScene.tscn" id="7_qd7v6"]
+[ext_resource type="PackedScene" uid="uid://c3kp6p607lmjs" path="res://MetalBlockScene.tscn" id="8_h6ft4"]
+[ext_resource type="Texture2D" uid="uid://bcg7ygsx0r40h" path="res://Art/crane75%closed.png" id="8_sxd43"]
+[ext_resource type="Texture2D" uid="uid://dk1s032uniepi" path="res://Art/cranearrowleft.png" id="9_6j7js"]
+[ext_resource type="Texture2D" uid="uid://e6vk1vrnntsq" path="res://Art/craneclosed.png" id="9_r4mn2"]
+[ext_resource type="PackedScene" uid="uid://it2ndqpst62e" path="res://PlasticBlockScene.tscn" id="9_v2eo7"]
+[ext_resource type="Texture2D" uid="uid://j5ia188ap651" path="res://Art/cranearrowdown.png" id="10_0flua"]
+[ext_resource type="PackedScene" uid="uid://di0uhmqcug21j" path="res://GlassBlockScene.tscn" id="10_5mex7"]
+[ext_resource type="Texture2D" uid="uid://cbbnw42dkk6nr" path="res://Art/cranearrowright.png" id="10_atce3"]
+[ext_resource type="Texture2D" uid="uid://cclv48mubsqip" path="res://Art/cranearrowup.png" id="11_inf06"]
+[ext_resource type="Texture2D" uid="uid://cu5r24uucxqbd" path="res://Art/beltanimf2.png" id="15_bjrx0"]
+[ext_resource type="Texture2D" uid="uid://cvq04nk6gmhw0" path="res://Art/beltanimf3.png" id="16_cs3bx"]
+[ext_resource type="Texture2D" uid="uid://buhnl0ecr1nt" path="res://Art/beltanimf1.png" id="16_gngvv"]
+[ext_resource type="Texture2D" uid="uid://duks6huagddiq" path="res://Art/beltanimf4.png" id="17_sgff8"]
+[ext_resource type="Texture2D" uid="uid://chcfjd656afyt" path="res://Art/grabbutton1.png" id="19_6uqyv"]
+[ext_resource type="Texture2D" uid="uid://dx6xunhnvpydb" path="res://Art/dropbutton1.png" id="20_4unim"]
+[ext_resource type="Script" path="res://PauseButton.cs" id="22_uam3j"]
+[ext_resource type="Script" path="res://SoundManager.cs" id="25_n06vy"]
+[ext_resource type="AudioStream" uid="uid://dq6m3nlvt8re7" path="res://sounds/woodimpactlight.wav" id="26_1xtjx"]
+[ext_resource type="AudioStream" uid="uid://cen8ykd6ql5nc" path="res://sounds/clawopen.wav" id="26_5xpc4"]
+[ext_resource type="AudioStream" uid="uid://w0klj1xmq8qa" path="res://sounds/metalimpactheavy.wav" id="27_ak4yw"]
+[ext_resource type="AudioStream" uid="uid://d1a3qrvtn2i57" path="res://sounds/clawclose.wav" id="27_t1hrl"]
+[ext_resource type="AudioStream" uid="uid://ds2opymyferpe" path="res://sounds/glassimpactlight.wav" id="28_1xc0t"]
+[ext_resource type="AudioStream" uid="uid://buu7xdksjh0n7" path="res://sounds/plasticimpactlight.wav" id="29_3bk1f"]
+[ext_resource type="AudioStream" uid="uid://b17m0n3uqjycp" path="res://sounds/truckengineloop.wav" id="30_et1cx"]
+[ext_resource type="AudioStream" uid="uid://cwppre2ree7kk" path="res://sounds/loadthetruckmainthemeingame2.wav" id="31_aefk7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p3ty3"]
+font_size = 90
+font_color = Color(1, 0.0392157, 0.0705882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fo6ns"]
+font_size = 90
+font_color = Color(0.870588, 0.12549, 0.0392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8ore"]
+bg_color = Color(0.754026, 0.156142, 0.248997, 1)
+
+[sub_resource type="Animation" id="Animation_f1j41"]
+resource_name = "Grab"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kauha:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_3mtc0"), ExtResource("8_sxd43"), ExtResource("9_r4mn2")]
+}
+
+[sub_resource type="Animation" id="Animation_5hlny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kauha:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_3mtc0")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74kqo"]
+_data = {
+"Grab": SubResource("Animation_f1j41"),
+"RESET": SubResource("Animation_5hlny")
+}
+
+[sub_resource type="Animation" id="Animation_l3jlu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kauha:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_sxd43")]
+}
+
+[sub_resource type="Animation" id="Animation_ky0il"]
+resource_name = "Release"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kauha:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_sxd43"), ExtResource("7_3mtc0"), ExtResource("7_crcvw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o40ef"]
+_data = {
+"RESET": SubResource("Animation_l3jlu"),
+"Release": SubResource("Animation_ky0il")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8exa8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_gngvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bjrx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cs3bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sgff8")
+}],
+"loop": true,
+"name": &"beltroll",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i16lj"]
+size = Vector2(425, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7xrc"]
+size = Vector2(1063, 20)
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1075.0
+offset_bottom = 1917.0
+texture = ExtResource("1_x472y")
+
+[node name="CollectionManager" type="Node2D" parent="."]
+position = Vector2(805, 1252)
+script = ExtResource("1_njhfg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CollectionManager"]
+position = Vector2(-228.454, -130.401)
+
+[node name="Truck" type="Sprite2D" parent="CollectionManager/StaticBody2D"]
+position = Vector2(-58.546, 28.401)
+scale = Vector2(8.53906, 5.25781)
+texture = ExtResource("2_h8urr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollectionManager/StaticBody2D"]
+position = Vector2(429.79, 48.3256)
+polygon = PackedVector2Array(-13.3357, 1.07544, -498.336, -5.92456, -624.336, -4.92456, -617.336, -192.925, -644.336, -198.925, -655.336, -182.925, -686.336, -182.925, -716.336, -208.925, -943.336, -182.925, -958.336, -160.925, -957.336, 66.0754, -875.336, 64.0754, -843.336, 75.0754, -801.336, 94.0754, -754.336, 87.0754, -727.336, 71.0754, -246.336, 76.0754, -214.336, 93.0754, -152.336, 76.0754, -98.3357, 79.0754, -42.3357, 94.0754, 6.66431, 71.0754, 28.6643, 71.0754, 28.6643, -190.925, 11.6643, -191.925, 15.6643, -2.92456)
+
+[node name="CollectionArea" type="Area2D" parent="CollectionManager/StaticBody2D"]
+position = Vector2(130.454, -85.599)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollectionManager/StaticBody2D/CollectionArea"]
+position = Vector2(-315.03, 164.058)
+polygon = PackedVector2Array(4.03015, -28.0579, 630.03, -26.0579, 625.03, -217.058, -5.96985, -219.058)
+
+[node name="ScoreLabel" type="Label" parent="CollectionManager"]
+offset_left = -249.0
+offset_top = -1130.0
+offset_right = -96.0
+offset_bottom = -1006.0
+label_settings = SubResource("LabelSettings_p3ty3")
+
+[node name="GameTimer" type="Timer" parent="CollectionManager"]
+
+[node name="TimerLabel" type="Label" parent="CollectionManager"]
+offset_left = -246.967
+offset_top = -1250.42
+offset_right = -28.967
+offset_bottom = -1100.42
+text = "30"
+label_settings = SubResource("LabelSettings_fo6ns")
+
+[node name="WeightProgressBar" type="ProgressBar" parent="CollectionManager"]
+offset_left = 133.0
+offset_top = -1245.0
+offset_right = 250.0
+offset_bottom = -833.0
+theme_override_font_sizes/font_size = 45
+theme_override_styles/fill = SubResource("StyleBoxFlat_e8ore")
+max_value = 200.0
+fill_mode = 3
+
+[node name="Claw" type="Node2D" parent="."]
+position = Vector2(11, 8)
+script = ExtResource("4_hlo42")
+Acceleration = 350.0
+Deceleration = 350.0
+MaxSpeed = 500.0
+WoodBlockScene = ExtResource("7_qd7v6")
+MetalBlockScene = ExtResource("8_h6ft4")
+PlasticBlockScene = ExtResource("9_v2eo7")
+GlassBlockScene = ExtResource("10_5mex7")
+
+[node name="BlockSpawnTimer" type="Timer" parent="Claw"]
+
+[node name="Kauha" type="Sprite2D" parent="Claw"]
+position = Vector2(65, 71.5)
+scale = Vector2(1.40625, 1.67188)
+texture = ExtResource("8_sxd43")
+
+[node name="Grab" type="AnimationPlayer" parent="Claw"]
+libraries = {
+"": SubResource("AnimationLibrary_74kqo")
+}
+
+[node name="Release" type="AnimationPlayer" parent="Claw"]
+libraries = {
+"": SubResource("AnimationLibrary_o40ef")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(535, 951)
+script = ExtResource("6_xlu3s")
+
+[node name="BlockSpawnArea" type="Area2D" parent="."]
+position = Vector2(10.1889, 386.291)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="BlockSpawnArea"]
+position = Vector2(196.811, 27.709)
+scale = Vector2(3.25, 2.64063)
+sprite_frames = SubResource("SpriteFrames_8exa8")
+animation = &"beltroll"
+autoplay = "beltroll"
+frame_progress = 0.107996
+
+[node name="Mobile Controls" type="CanvasLayer" parent="BlockSpawnArea"]
+
+[node name="DownButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(164, 1591)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("10_0flua")
+texture_pressed = ExtResource("10_0flua")
+action = "Down"
+
+[node name="UpButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(164, 1328)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("11_inf06")
+texture_pressed = ExtResource("11_inf06")
+action = "Up"
+
+[node name="LeftButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(15, 1461)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("9_6j7js")
+texture_pressed = ExtResource("9_6j7js")
+action = "Left"
+
+[node name="RightButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(310, 1461)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("10_atce3")
+texture_pressed = ExtResource("10_atce3")
+action = "Right"
+
+[node name="DropButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(656, 1516)
+scale = Vector2(2.83594, 2.74462)
+texture_normal = ExtResource("19_6uqyv")
+texture_pressed = ExtResource("19_6uqyv")
+action = "pickup"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(650, 1262)
+scale = Vector2(2.90625, 2.71094)
+texture_normal = ExtResource("20_4unim")
+texture_pressed = ExtResource("20_4unim")
+action = "Drop"
+
+[node name="PauseButton" type="TouchScreenButton" parent="BlockSpawnArea/Mobile Controls"]
+position = Vector2(656, -11)
+scale = Vector2(0.290039, 0.318359)
+script = ExtResource("22_uam3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockSpawnArea"]
+position = Vector2(187, 25)
+shape = SubResource("RectangleShape2D_i16lj")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(480.211, 1271.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(56.2894, 0)
+shape = SubResource("RectangleShape2D_t7xrc")
+
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("25_n06vy")
+ClawOpenSound = ExtResource("26_5xpc4")
+ClawCloseSound = ExtResource("27_t1hrl")
+WoodImpactSound = ExtResource("26_1xtjx")
+MetalImpactSound = ExtResource("27_ak4yw")
+GlassImpactSound = ExtResource("28_1xc0t")
+PlasticImpactSound = ExtResource("29_3bk1f")
+TruckEngineSound = ExtResource("30_et1cx")
+BackgroundMusic = ExtResource("31_aefk7")
+
+[connection signal="area_entered" from="CollectionManager/StaticBody2D/CollectionArea" to="CollectionManager" method="_on_collection_area_area_entered"]
+[connection signal="body_entered" from="CollectionManager/StaticBody2D/CollectionArea" to="CollectionManager" method="_on_collection_area_body_entered"]

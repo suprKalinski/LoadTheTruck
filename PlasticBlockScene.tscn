@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://it2ndqpst62e"]
+
+[ext_resource type="Script" path="res://PlasticBlockScene.cs" id="1_7s3vb"]
+[ext_resource type="Texture2D" uid="uid://8u8v8ck84gvt" path="res://Art/pesukone.png" id="2_xk4rf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_365yg"]
+size = Vector2(44.3075, 44.206)
+
+[node name="Block" type="RigidBody2D"]
+position = Vector2(111, 108)
+script = ExtResource("1_7s3vb")
+BlockType = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, -2.99999)
+scale = Vector2(1.42188, 1.51563)
+texture = ExtResource("2_xk4rf")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, -2.5)
+scale = Vector2(1.42188, 1.51563)
+shape = SubResource("RectangleShape2D_365yg")

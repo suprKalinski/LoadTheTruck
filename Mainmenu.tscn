@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1s0rln3gellu"]
+
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_pb4eg"]
+[ext_resource type="Texture2D" uid="uid://bfcirxq33h1ho" path="res://Art/menubackground.png" id="2_b65e5"]
+[ext_resource type="Texture2D" uid="uid://djyrpnec5v2hx" path="res://Art/menuplaybutton.png" id="3_ainwi"]
+[ext_resource type="Texture2D" uid="uid://bfqpjjqu12tur" path="res://Art/teamlogo1024x1024.png" id="4_t3gih"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pb4eg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 1081.0
+offset_bottom = 1918.0
+texture = ExtResource("2_b65e5")
+
+[node name="PlayButton" type="TouchScreenButton" parent="."]
+position = Vector2(271, 1383)
+scale = Vector2(1.98438, 1.86719)
+texture_normal = ExtResource("3_ainwi")
+texture_pressed = ExtResource("3_ainwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(141, 1807)
+scale = Vector2(0.290039, 0.351074)
+texture = ExtResource("4_t3gih")

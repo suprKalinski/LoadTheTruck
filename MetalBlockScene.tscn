@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3kp6p607lmjs"]
+
+[ext_resource type="Script" path="res://BlockMetal.cs" id="1_mk08c"]
+[ext_resource type="Texture2D" uid="uid://bfadnemx5abmh" path="res://Art/metalsafe.png" id="2_0g1po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyv4d"]
+size = Vector2(56, 77.5)
+
+[node name="Block" type="RigidBody2D"]
+position = Vector2(105, 85)
+mass = 2.0
+script = ExtResource("1_mk08c")
+BlockType = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13.5, -5.5)
+scale = Vector2(1.14063, 1.39063)
+texture = ExtResource("2_0g1po")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, -7.25)
+shape = SubResource("RectangleShape2D_fyv4d")

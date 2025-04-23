@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwnooyerd8dn"]
+
+[ext_resource type="Script" path="res://GameLostScreen.cs" id="1_j0j4h"]
+[ext_resource type="Texture2D" uid="uid://b8duvee2s2bml" path="res://Art/backgroundmain.png" id="2_5ockf"]
+[ext_resource type="Texture2D" uid="uid://bsguundn6musg" path="res://Art/START.png" id="2_76ykf"]
+[ext_resource type="Texture2D" uid="uid://cc8g3fji3mg0s" path="res://Art/gameoverscreen.png" id="3_x2dby"]
+[ext_resource type="Texture2D" uid="uid://c5qo7pri8ewjy" path="res://Art/QUIT.png" id="3_ypbi4"]
+[ext_resource type="Texture2D" uid="uid://jsa2afrclx5i" path="res://Art/restartbutton.png" id="4_01h0n"]
+[ext_resource type="Texture2D" uid="uid://dabrigfnilt4c" path="res://Art/backtomenubutton.png" id="6_exhrc"]
+
+[node name="GameLostScreen" type="CanvasLayer"]
+script = ExtResource("1_j0j4h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1086.0
+offset_bottom = 1912.0
+texture = ExtResource("2_5ockf")
+
+[node name="MessageLabel" type="TextureRect" parent="."]
+offset_left = 47.0
+offset_top = 35.0
+offset_right = 992.0
+offset_bottom = 986.0
+texture = ExtResource("3_x2dby")
+
+[node name="RestartButton" type="TouchScreenButton" parent="."]
+process_mode = 3
+position = Vector2(263, 909)
+scale = Vector2(3.94531, 4.42187)
+texture_normal = ExtResource("4_01h0n")
+texture_pressed = ExtResource("2_76ykf")
+
+[node name="QuitButton" type="TouchScreenButton" parent="."]
+process_mode = 3
+position = Vector2(258, 1264)
+scale = Vector2(4.08594, 5.76563)
+texture_normal = ExtResource("6_exhrc")
+texture_pressed = ExtResource("3_ypbi4")

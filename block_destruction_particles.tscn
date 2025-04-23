@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs6r7t04kqf2w"]
+
+[sub_resource type="Gradient" id="Gradient_c1h3x"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8o3ig"]
+gradient = SubResource("Gradient_c1h3x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_golcw"]
+particle_flag_disable_z = true
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+gravity = Vector3(0, -98, 0)
+scale_min = 0.5
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_8o3ig")
+
+[sub_resource type="Gradient" id="Gradient_80evx"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7ryva"]
+gradient = SubResource("Gradient_80evx")
+
+[node name="Node2D" type="GPUParticles2D"]
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_golcw")
+texture = SubResource("GradientTexture1D_7ryva")
+one_shot = true
+randomness = 0.2
+draw_order = 0

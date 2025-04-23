@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://v6vc4hqa6uyv"]
+
+[ext_resource type="Texture2D" uid="uid://cyl6wqq0oc4cy" path="res://Art/woodencrate.png" id="1_d74vy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xk7l"]
+size = Vector2(30, 59)
+
+[node name="Block" type="RigidBody2D"]
+position = Vector2(50, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.00003, 8.00001)
+scale = Vector2(0.0681818, 0.0805556)
+texture = ExtResource("1_d74vy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 9.5)
+shape = SubResource("RectangleShape2D_1xk7l")
